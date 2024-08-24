@@ -25,15 +25,15 @@
                 class="odd:bg-white even:bg-gray-50 border-b text-gray-900 font-medium whitespace-nowrap"
                 *ngFor="let appointment of appointments"
             >
-                <th class="py-6 px-3">{{ appointment.doctor }}</th>
-                <th class="py-6 px-3">
+                <td class="py-6 px-3">{{ appointment.doctor }}</td>
+                <td class="py-6 px-3">
                     {{ appointment.date | date : "short" }}
-                </th>
-                <th class="py-6 px-3">{{ appointment.treatment }}</th>
-                <th class="py-6 px-3">{{ appointment.phone }}</th>
-                <th class="py-6 px-3">
+                </td>
+                <td class="py-6 px-3">{{ appointment.treatment }}</td>
+                <td class="py-6 px-3">{{ appointment.phone }}</td>
+                <td class="py-6 px-3">
                     <span class="material-symbols-rounded"> cancel </span>
-                </th>
+                </td>
             </tr>
         </tbody>
     </table>
