@@ -1,0 +1,159 @@
+<div class="p-5 flex flex-col gap-6">
+    <div
+        class="w-full shadow rounded-md p-4 bg-white flex flex-col gap-2 border"
+    >
+        <p class="text-gray-500">Welcome back 👋,</p>
+        <h2 class="text-3xl font-semibold">{{ patientName }}</h2>
+        <p class="text-gray-500 text-justify">
+            We would like to take this opportunity to welcome you to our
+            practice and to thank you for choosing our physicians to participate
+            in your healthcare. We look forward to providing you with
+            personalized, comprehensive health care focusing on wellness and
+            prevention.
+        </p>
+    </div>
+
+    <!--  4 Widgets -->
+    <div class="grid grid-cols-4 gap-4">
+        <div
+            class="bg-white p-4 rounded-md shadow h-32 flex flex-col justify-between border"
+        >
+            <div class="flex justify-between">
+                <span class="material-symbols-rounded text-red-700">
+                    bloodtype
+                </span>
+                <div>
+                    <h2 class="text-lg">Blood Pressure</h2>
+                    <p class="text-green-600">110/70</p>
+                </div>
+            </div>
+            <p class="text-gray-500">10% higher than last month</p>
+        </div>
+        <div
+            class="bg-white p-4 rounded-md shadow h-32 flex flex-col justify-between border"
+        >
+            <div class="flex justify-between">
+                <span class="material-symbols-rounded text-green-600">
+                    blood_pressure
+                </span>
+                <div>
+                    <h2 class="text-lg">Blood Pressure</h2>
+                    <p class="text-green-600">650</p>
+                </div>
+            </div>
+            <p class="text-gray-500">7% less than last month</p>
+        </div>
+        <div
+            class="bg-white p-4 rounded-md shadow h-32 flex flex-col justify-between border"
+        >
+            <div class="flex justify-between">
+                <span class="material-symbols-rounded text-amber-600">
+                    gas_meter
+                </span>
+                <div>
+                    <h2 class="text-lg">Glucose Level</h2>
+                    <p class="text-green-600">88-75</p>
+                </div>
+            </div>
+            <p class="text-gray-500">12% higher than last month</p>
+        </div>
+        <div
+            class="bg-white p-4 rounded-md shadow h-32 flex flex-col justify-between border"
+        >
+            <div class="flex justify-between">
+                <span class="material-symbols-rounded text-purple-500">
+                    hematology
+                </span>
+                <div>
+                    <h2 class="text-lg">Blood Count</h2>
+                    <p class="text-green-600">9456/ml</p>
+                </div>
+            </div>
+            <p class="text-gray-500">22% less than last month</p>
+        </div>
+    </div>
+
+    <!--  Appointments & Reports -->
+    <div class="grid grid-cols-5 gap-4">
+        <div
+            class="bg-white p-4 rounded-md shadow col-span-3 flex flex-col gap-4 h-fit border"
+        >
+            <h2 class="text-center font-semibold">Appointments</h2>
+            <div *ngIf="!appointments" class="flex justify-center">
+                <div
+                    class="border-gray-300 h-10 w-10 animate-spin rounded-full border-4 border-t-blue-600"
+                ></div>
+            </div>
+
+            <table
+                *ngIf="appointments"
+                class="table-auto w-full text-sm text-left rtl:text-right text-gray-500"
+            >
+                <thead
+                    class="text-sm bg-gray-50 uppercase border-b text-gray-700 rounded-md"
+                >
+                    <tr>
+                        <th class="py-6 px-3">Doctor</th>
+                        <th class="py-6 px-3">Date</th>
+                        <th class="py-6 px-3">Treatment</th>
+                        <th class="py-6 px-3">Phone no.</th>
+                        <th class="py-6 px-3">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                        class="odd:bg-white even:bg-gray-50 border-b text-gray-900 font-medium whitespace-nowrap"
+                        *ngFor="let appointment of appointments"
+                    >
+                        <td class="py-6 px-3">{{ appointment.doctor }}</td>
+                        <td class="py-6 px-3">
+                            {{ appointment.date | date : "short" }}
+                        </td>
+                        <td class="py-6 px-3">{{ appointment.treatment }}</td>
+                        <td class="py-6 px-3">{{ appointment.phone }}</td>
+                        <td class="py-6 px-3">
+                            <span class="material-symbols-rounded">
+                                cancel
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div
+            class="bg-white p-4 rounded-md shadow col-span-2 flex flex-col gap-4 h-fit border"
+        >
+            <h2 class="text-center font-semibold">Reports/Documents</h2>
+            <div class="flex justify-between p-3 border border-dotted">
+                <h2>Blood Report</h2>
+                <span class="material-symbols-rounded text-red-500">
+                    download delete
+                </span>
+            </div>
+            <div class="flex justify-between p-3 border border-dotted">
+                <h2>Prescription</h2>
+                <span class="material-symbols-rounded text-red-500">
+                    download delete
+                </span>
+            </div>
+            <div class="flex justify-between p-3 border border-dotted">
+                <h2>Medical Documents</h2>
+                <span class="material-symbols-rounded text-red-500">
+                    download delete
+                </span>
+            </div>
+            <div class="flex justify-between p-3 border border-dotted">
+                <h2>X-Ray</h2>
+                <span class="material-symbols-rounded text-red-500">
+                    download delete
+                </span>
+            </div>
+            <div class="flex justify-between p-3 border border-dotted">
+                <h2>Urine Report</h2>
+                <span class="material-symbols-rounded text-red-500">
+                    download delete
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

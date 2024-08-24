@@ -1,0 +1,89 @@
+<div class="p-5 mt-5">
+    <div class="flex flex-col justify-center items-center gap-12">
+        <div>
+            <h2 class="text-4xl font-semibold">Book an Appointment</h2>
+        </div>
+        <form
+            [formGroup]="form"
+            (ngSubmit)="onSubmit()"
+            class="border w-2/4 h-auto flex flex-col gap-8 justify-center items-center p-8 rounded-md shadow-lg"
+        >
+            <div class="flex items-center justify-between w-full">
+                <label>Your Name</label>
+                <input
+                    formControlName="name"
+                    class="p-2 rounded-lg bg-transparent border border-gray-200 w-72"
+                    placeholder="John Doe"
+                />
+            </div>
+            <div class="flex items-center justify-between w-full">
+                <label>Treatment</label>
+                <select
+                    class="p-2 rounded-lg bg-transparent border w-72"
+                    formControlName="treatment"
+                >
+                    <option selected>Select treatment type</option>
+                    <option *ngFor="let treatment of treatments">
+                        {{ treatment }}
+                    </option>
+                </select>
+            </div>
+            <div class="flex items-center justify-between w-full">
+                <label>Doctor</label>
+                <select
+                    class="p-2 rounded-lg bg-transparent border w-72"
+                    formControlName="doctor"
+                >
+                    <option selected>Select Doctor</option>
+                    <option *ngFor="let doctor of doctors">
+                        {{ doctor }}
+                    </option>
+                </select>
+            </div>
+            <div class="flex items-center justify-between w-full">
+                <label>Date & Time</label>
+                <input
+                    type="datetime-local"
+                    formControlName="date"
+                    class="p-2 w-72 rounded-lg bg-transparent border"
+                />
+            </div>
+            <div class="flex items-center justify-between w-full">
+                <label>Place</label>
+                <select
+                    class="p-2 rounded-lg bg-transparent border w-72"
+                    formControlName="place"
+                >
+                    <option selected>Treatment Place</option>
+                    <option *ngFor="let place of places">
+                        {{ place }}
+                    </option>
+                </select>
+            </div>
+            <div class="flex items-center justify-between w-full">
+                <label>Phone no.</label>
+                <input
+                    formControlName="phone"
+                    class="p-2 w-72 rounded-lg bg-transparent border"
+                    placeholder="123-456-78"
+                />
+            </div>
+            <div class="flex justify-center w-full">
+                <button
+                    class="bg-blue-600 rounded-md px-4 py-1 text-white hover:bg-blue-700"
+                >
+                    Book Appointment
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="flex justify-end" *ngIf="alert">
+    <div
+        role="alert"
+        class="absolute top-4 right-1 bg-green-500 text-white rounded-md p-3 w-fit text-center"
+    >
+        <span> Your Appointment is Schedueled. </span>
+    </div>
+</div>
