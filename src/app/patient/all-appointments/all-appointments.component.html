@@ -1,30 +1,26 @@
 <div class="p-4 flex flex-col justify-center items-center gap-8">
     <h2 class="text-center text-4xl">All Appointments</h2>
     <div *ngIf="!appointments" class="flex justify-center">
-        <div
-            class="border-gray-50 h-10 w-10 animate-spin rounded-full border-4 border-t-blue-600"
-        ></div>
+        <p-progressSpinner></p-progressSpinner>
     </div>
-    <table
-        *ngIf="appointments"
-        class="table-auto w-9/12 text-sm text-left rtl:text-right text-gray-500"
+    <p-table
+        [value]="appointments"
+        [scrollable]="true"
+        scrollHeight="20rem"
+        [tableStyle]="{ 'min-width': '60rem' }"
     >
-        <thead
-            class="text-sm bg-gray-50 uppercase border-b text-gray-700 rounded-md"
-        >
+        <ng-template pTemplate="header">
             <tr>
-                <th class="py-6 px-3">Doctor</th>
-                <th class="py-6 px-3">Date</th>
-                <th class="py-6 px-3">Treatment</th>
-                <th class="py-6 px-3">Phone no.</th>
-                <th class="py-6 px-3">Action</th>
+                <th>Doctor</th>
+                <th>Date</th>
+                <th>Treatment</th>
+                <th>Phone no</th>
+                <th>Action</th>
             </tr>
-        </thead>
-        <tbody>
-            <tr
-                class="odd:bg-white even:bg-gray-50 border-b text-gray-900 font-medium whitespace-nowrap"
-                *ngFor="let appointment of appointments"
-            >
+        </ng-template>
+
+        <ng-template pTemplate="body" let-appointment>
+            <tr>
                 <td class="py-6 px-3">{{ appointment.doctor }}</td>
                 <td class="py-6 px-3">
                     {{ appointment.date | date : "short" }}
@@ -35,6 +31,6 @@
                     <span class="material-symbols-rounded"> cancel </span>
                 </td>
             </tr>
-        </tbody>
-    </table>
+        </ng-template>
+    </p-table>
 </div>

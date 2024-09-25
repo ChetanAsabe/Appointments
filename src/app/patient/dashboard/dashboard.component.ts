@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { AppointmentService } from 'src/app/services/appointment.service';
+import { Appointment } from 'src/app/types/Index';
 
 @Component({
     selector: 'app-dashboard',
@@ -8,8 +9,8 @@ import { AppointmentService } from 'src/app/services/appointment.service';
     styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-    patientName: string = 'ABCD';
-    appointments: any;
+    patientName: string = 'John';
+    appointments: Appointment[] = [];
 
     constructor(private appointmentService: AppointmentService) {
         this.getAppointments();

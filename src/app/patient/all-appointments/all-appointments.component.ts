@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { AppointmentService } from 'src/app/services/appointment.service';
+import { Appointment } from 'src/app/types/Index';
 
 @Component({
     selector: 'app-all-appointments',
@@ -8,7 +9,7 @@ import { AppointmentService } from 'src/app/services/appointment.service';
     styleUrls: ['./all-appointments.component.css'],
 })
 export class AllAppointmentsComponent implements OnInit {
-    appointments!: any[];
+    appointments!: Appointment[];
 
     constructor(private appointmentService: AppointmentService) {}
 

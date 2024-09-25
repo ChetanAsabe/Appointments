@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Appointment } from '../types/Index';
 
 @Injectable({
     providedIn: 'root',
@@ -10,7 +11,7 @@ export class AppointmentService {
 
     constructor(private client: HttpClient) {}
 
-    bookNewAppointment(appoinmentsData: any) {
+    bookNewAppointment(appoinmentsData: Appointment) {
         return this.client.post(
             `${this.API_URL}appointments.json`,
             appoinmentsData

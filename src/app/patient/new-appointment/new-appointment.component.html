@@ -11,9 +11,10 @@
             <div class="flex items-center justify-between w-full">
                 <label>Your Name</label>
                 <input
-                    formControlName="name"
-                    class="p-2 rounded-lg bg-transparent border border-gray-200 w-72"
+                    type="text"
+                    pInputText
                     placeholder="John Doe"
+                    formControlName="name"
                 />
             </div>
             <div class="flex items-center justify-between w-full">
@@ -62,19 +63,19 @@
             </div>
             <div class="flex items-center justify-between w-full">
                 <label>Phone no.</label>
-                <input
-                    formControlName="phone"
-                    class="p-2 w-72 rounded-lg bg-transparent border"
+                <p-inputNumber
+                    inputId="integeronly"
                     placeholder="123-456-78"
-                />
+                    formControlName="phone"
+                ></p-inputNumber>
             </div>
-            <div class="flex justify-center w-full">
-                <button
-                    class="bg-blue-600 rounded-md px-4 py-1 text-white hover:bg-blue-700"
-                >
-                    Book Appointment
-                </button>
-            </div>
+            <button
+                pButton
+                pRipple
+                type="button"
+                label="Book Appointment"
+                class="p-button-raised"
+            ></button>
         </form>
     </div>
 </div>

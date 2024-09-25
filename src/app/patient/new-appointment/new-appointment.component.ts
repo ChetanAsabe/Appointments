@@ -13,6 +13,8 @@ export class NewAppointmentComponent implements OnInit {
     treatments: String[] = ['Cancer', 'Fever', 'Cholera', 'Malaria'];
     places: String[] = ['Pune', 'Mumbai', 'Delhi', 'Bengalore', 'Nagpur'];
 
+    selectedTreatment: string = '';
+
     alert = false;
 
     appointments!: [];

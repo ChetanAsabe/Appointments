@@ -1,23 +1,19 @@
 <div class="p-5 flex flex-col gap-6">
-    <div
-        class="w-full shadow rounded-md p-4 bg-white flex flex-col gap-2 border"
-    >
-        <p class="text-gray-500">Welcome back 👋,</p>
-        <h2 class="text-3xl font-semibold">{{ patientName }}</h2>
-        <p class="text-gray-500 text-justify">
+    <p-card>
+        <p>Welcome back,</p>
+        <p class="text-3xl font-semibold my-2">{{ patientName }}</p>
+        <p>
             We would like to take this opportunity to welcome you to our
             practice and to thank you for choosing our physicians to participate
             in your healthcare. We look forward to providing you with
             personalized, comprehensive health care focusing on wellness and
             prevention.
         </p>
-    </div>
+    </p-card>
 
     <!--  4 Widgets -->
     <div class="grid grid-cols-4 gap-4">
-        <div
-            class="bg-white p-4 rounded-md shadow h-32 flex flex-col justify-between border"
-        >
+        <p-card class="flex flex-col justify-between">
             <div class="flex justify-between">
                 <span class="material-symbols-rounded text-red-700">
                     bloodtype
@@ -28,12 +24,10 @@
                 </div>
             </div>
             <p class="text-gray-500">10% higher than last month</p>
-        </div>
-        <div
-            class="bg-white p-4 rounded-md shadow h-32 flex flex-col justify-between border"
-        >
+        </p-card>
+        <p-card class="flex flex-col justify-between">
             <div class="flex justify-between">
-                <span class="material-symbols-rounded text-green-600">
+                <span class="material-symbols-rounded text-red-700">
                     blood_pressure
                 </span>
                 <div>
@@ -42,12 +36,10 @@
                 </div>
             </div>
             <p class="text-gray-500">7% less than last month</p>
-        </div>
-        <div
-            class="bg-white p-4 rounded-md shadow h-32 flex flex-col justify-between border"
-        >
+        </p-card>
+        <p-card class="flex flex-col justify-between">
             <div class="flex justify-between">
-                <span class="material-symbols-rounded text-amber-600">
+                <span class="material-symbols-rounded text-red-700">
                     gas_meter
                 </span>
                 <div>
@@ -56,12 +48,10 @@
                 </div>
             </div>
             <p class="text-gray-500">12% higher than last month</p>
-        </div>
-        <div
-            class="bg-white p-4 rounded-md shadow h-32 flex flex-col justify-between border"
-        >
+        </p-card>
+        <p-card class="flex flex-col justify-between">
             <div class="flex justify-between">
-                <span class="material-symbols-rounded text-purple-500">
+                <span class="material-symbols-rounded text-red-700">
                     hematology
                 </span>
                 <div>
@@ -70,7 +60,7 @@
                 </div>
             </div>
             <p class="text-gray-500">22% less than last month</p>
-        </div>
+        </p-card>
     </div>
 
     <!--  Appointments & Reports -->
